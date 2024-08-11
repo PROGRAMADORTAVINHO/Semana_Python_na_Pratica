@@ -13,4 +13,4 @@ lista_colunas = ["loja", "cidade", "estado", "tamanho", "local_consumo"]
 for coluna in lista_colunas:
     grafico = px.histogram(dados, x=coluna, y="preco", text_auto=True, title="Faturamento", color="forma_pagamento")
     grafico.show()
-    grafico.write_html(f"Faturamento-{coluna}.html")
+    grafico.write_html(f"Faturamento-{coluna}.html") # Cria um arquico html
