@@ -8,6 +8,10 @@ import plotly.express as px
 
 dados = pd.read_excel('D:\\Programação\\Python\\Semana do Python na Pratica\\3º Projeto\\vendas.xlsx')
 
+# Faturamento por mais colunas
+dados_agrupados = dados.groupby(["estado", "cidade", "loja", "forma_pagamento"])["preco"].sum().to_frame()
+dados_agrupados.to_excel("Faturamento.xlsx") # Cria um arquico xlsx
+
 lista_colunas = ["loja", "cidade", "estado", "tamanho", "local_consumo"]
 
 for coluna in lista_colunas:
